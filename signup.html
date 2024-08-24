@@ -1,0 +1,44 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign up</title>
+</head>
+<body>
+    <body>
+        <section id="sign_up">
+            <div class="container">
+                <h1>Create Your Journey Here!</h1>
+                <form action="">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" 
+                    name="username" 
+                    required 
+                    minlength="3">
+                    <label for="email_address">Email</label>
+                    <input type="email" id="email_address" 
+                    name="email_address" 
+                    required>
+                    <label for="contact_no">Phone</label>
+                    <input type="tel" id="contact_no" 
+                    name="contact_no" 
+                    pattern="[0-9]{10}" 
+                    required>
+                    <label for="password">Password</label>
+                    <input type="password" id="password" 
+                    name="password" 
+                    required 
+                    minlength="6">
+                    <label for="confirm_password">Confirm Password</label>
+                    <input type="password" id="confirm_password" 
+                    name="confirm_password"
+                    required 
+                    minlength="6">
+                    <button>Sign Up</button>
+                    <p>Already a member? <a href="./login.html">Login</a></p>
+                </form>
+            </div>
+        </section>
+    </body>
+</body>
+</html>
