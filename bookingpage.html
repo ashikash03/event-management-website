@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <script src="https://cdn.tailwindcss.com"></script>
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>Booking page</title>
+      <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              fontFamily: {
+                prompt: ["Prompt", sans-serif],
+              }
+            }
+          }
+        }
+      </script>
+      <style>
+        label::before {
+          content: "";
+          position: absolute;
+          inset: 0;
+          background-image: inherit;
+          background-size: cover;
+          background-position: center;
+          filter: brightness(1);
+          transition: filter 0.3s ease;
+          z-index: 0;
+        }
+      
+        /* Apply the brightness change when the radio button is checked */
+        input:checked + label::before {
+          filter: brightness(0.5);
+          color: white;
+        }
+      </style>
+</head>
+<body>
+  
+
+<nav class="bg-white border-gray-200 dark:bg-[#2e394b]">
+  <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-3 p-4">
+  <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
+      <img src="/eventimgs/logo.png" alt="Flowbite Logo" width="40px" height="40px"/>
+      <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Zypher</span>
+  </a>
+  <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+      <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Get started</button>
+      <button data-collapse-toggle="navbar-cta" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-cta" aria-expanded="false">
+        <span class="sr-only">Open main menu</span>
+        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+        </svg>
+    </button>
+  </div>
+  <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-cta">
+    <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-[#2e394b] dark:border-gray-700">
+      <li>
+        <a href="#" class="block py-2 px-3 md:p-0 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:dark:text-blue-500" aria-current="page">Home</a>
+      </li>
+      <li>
+        <a href="#" class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About</a>
+      </li>
+      <li>
+        <a href="#" class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Services</a>
+      </li>
+      <li>
+        <a href="#" class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Contact</a>
+      </li>
+    </ul>
+  </div>
+  </div>
+</nav>
+
+    <div class="w-screen">
+      <div class="relative mx-auto mt-20 mb-20 max-w-screen-lg overflow-hidden rounded-t-xl:bg-[#2e394b] py-32 text-center shadow-xl shadow-gray-300">
+        <h1 class="mt-2 px-8 text-3xl font-bold drop-shadow-lg text-white md:text-5xl">Book your events</h1>
+        <h2 class="mt-6 text-2xl font-prompt text-white">Select your dates and take rest</h2>
+    
+        <!-- Swiper -->
+        <div class="swiper mySwiper absolute top-0 left-0 -z-10 h-full w-full">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img class="h-full w-full object-cover" src="./eventimgs/carousel1.jpg" alt="Slide 1" />
+            </div>
+            <div class="swiper-slide">
+              <img class="h-full w-full object-cover" src="./eventimgs/carousel3.jpg" alt="Slide 3" />
+            </div>
+            <div class="swiper-slide">
+              <img class="h-full w-full object-cover" src="./eventimgs/carousel4.jpg" alt="Slide 3" />
+            </div>
+            <div class="swiper-slide">
+              <img class="h-full w-full object-cover" src="./eventimgs/carousel.jpg" alt="Slide 3" />
+            </div>
+            <!-- Add more slides as needed -->
+          </div>
+        </div>
+      </div>
+    
+      <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+      <script>
+        var swiper = new Swiper(".mySwiper", {
+          loop: true,
+          autoplay: {
+            delay: 3000, // 3 seconds delay between slides
+            disableOnInteraction: false, // Continue autoplay even after user interactions
+          },
+        });
+      </script>
+      
+        <div class="mx-auto grid max-w-screen-lg px-6 pb-20">
+          <div class="">
+            <p class="font-serif text-xl font-bold text-[#2e394b]">Select a service</p>
+            <div class="mt-4 grid max-w-[1600px] gap-x-9 gap-y-3 sm:grid-cols-2 md:grid-cols-5">
+
+              <div class="relative">
+                <!-- Radio Button Input (hidden) -->
+                <input class="peer hidden" id="radio_1" type="radio" name="event" checked>
+                
+                <!-- Label with Background Image -->
+                <label for="radio_1" class="block h-[200px] w-full cursor-pointer rounded-lg shadow-lg shadow-slate-100 bg-cover bg-center peer-checked:shadow-inner peer-checked:text-white" style="background-image: url('./eventimgs/confernces.jpeg');">
+              
+                  
+                  <!-- Inner Content -->
+                  <div class="flex flex-col h-full p-4">                    
+                    <!-- Text Content -->
+                    <div class="mt-auto">
+                      <span class="absolute bottom-4 font-medium">Wedding</span>
+                    </div>
+                  </div>
+                </label>
+              </div>
+                
+              <div class="relative">
+                <!-- Radio Button Input (hidden) -->
+                <input class="peer hidden" id="radio_2" type="radio" name="event" checked>
+                
+                <!-- Label with Background Image -->
+                <label for="radio_2" class="block h-[200px] w-full cursor-pointer rounded-lg shadow-lg shadow-slate-100 bg-cover bg-center peer-checked:shadow-inner peer-checked:text-white" style="background-image: url('./eventimgs/birthday_party.jpeg');">
+              
+                  
+                  <!-- Inner Content -->
+                  <div class="flex flex-col h-full p-4">                    
+                    <!-- Text Content -->
+                    <div class="mt-auto">
+                      <span class="absolute bottom-4 font-medium">Wedding</span>
+                    </div>
+                  </div>
+                </label>
+              </div>
+              <div class="relative">
+                <!-- Radio Button Input (hidden) -->
+                <input class="peer hidden" id="radio_3" type="radio" name="event" checked>
+                
+                <!-- Label with Background Image -->
+                <label for="radio_3" class="block h-[200px] w-full cursor-pointer rounded-lg shadow-lg shadow-slate-100 bg-cover bg-center peer-checked:shadow-inner peer-checked:text-white" style="background-image: url('./eventimgs/wedding1.jpeg');">
+              
+                  
+                  <!-- Inner Content -->
+                  <div class="flex flex-col h-full p-4">                    
+                    <!-- Text Content -->
+                    <div class="mt-auto">
+                      <span class="absolute bottom-4 font-medium">Wedding</span>
+                    </div>
+                  </div>
+                </label>
+              </div>
+              <div class="relative">
+                <!-- Radio Button Input (hidden) -->
+                <input class="peer hidden" id="radio_4" type="radio" name="event" checked>
+                
+                <!-- Label with Background Image -->
+                <label for="radio_4" class="block h-[200px] w-full cursor-pointer rounded-lg shadow-lg shadow-slate-100 bg-cover bg-center peer-checked:shadow-inner peer-checked:text-white" style="background-image: url('./eventimgs/Trade\ Show.jpeg');">
+              
+                  
+                  <!-- Inner Content -->
+                  <div class="flex flex-col h-full p-4">                    
+                    <!-- Text Content -->
+                    <div class="mt-auto">
+                      <span class="absolute bottom-4 font-medium">Wedding</span>
+                    </div>
+                  </div>
+                </label>
+              </div>
+              <div class="relative">
+                <!-- Radio Button Input (hidden) -->
+                <input class="peer hidden" id="radio_5" type="radio" name="event" checked>
+                
+                <!-- Label with Background Image -->
+                <label for="radio_5" class="block h-[200px] w-full cursor-pointer rounded-lg shadow-lg shadow-slate-100 bg-cover bg-center peer-checked:shadow-inner peer-checked:text-white" style="background-image: url('./eventimgs/gala.jpeg');">
+              
+                  
+                  <!-- Inner Content -->
+                  <div class="flex flex-col h-full p-4">                    
+                    <!-- Text Content -->
+                    <div class="mt-auto">
+                      <span class="absolute bottom-4 font-medium">Wedding</span>
+                    </div>
+                  </div>
+                </label>
+              </div>
+              <div class="relative">
+                <!-- Radio Button Input (hidden) -->
+                <input class="peer hidden" id="radio_6" type="radio" name="event" checked>
+                
+                <!-- Label with Background Image -->
+                <label for="radio_6" class="block h-[200px] w-full cursor-pointer rounded-lg shadow-lg shadow-slate-100 bg-cover bg-center peer-checked:shadow-inner peer-checked:text-white" style="background-image: url('./eventimgs/social\ events.jpeg');">
+              
+                  
+                  <!-- Inner Content -->
+                  <div class="flex flex-col h-full p-4">                    
+                    <!-- Text Content -->
+                    <div class="mt-auto">
+                      <span class="absolute bottom-4 font-medium">Wedding</span>
+                    </div>
+                  </div>
+                </label>
+              </div>
+              <div class="relative">
+                <!-- Radio Button Input (hidden) -->
+                <input class="peer hidden" id="radio_7" type="radio" name="event" checked>
+                
+                <!-- Label with Background Image -->
+                <label for="radio_7" class="block h-[200px] w-full cursor-pointer rounded-lg shadow-lg shadow-slate-100 bg-cover bg-center peer-checked:shadow-inner peer-checked:text-white" style="background-image: url('./eventimgs/product_launch.jpeg');">
+              
+                  
+                  <!-- Inner Content -->
+                  <div class="flex flex-col h-full p-4">                    
+                    <!-- Text Content -->
+                    <div class="mt-auto">
+                      <span class="absolute bottom-4 font-medium">Wedding</span>
+                    </div>
+                  </div>
+                </label>
+              </div>
+              <div class="relative">
+                <!-- Radio Button Input (hidden) -->
+                <input class="peer hidden" id="radio_8" type="radio" name="event" checked>
+                
+                <!-- Label with Background Image -->
+                <label for="radio_8" class="block h-[200px] w-full cursor-pointer rounded-lg shadow-lg shadow-slate-100 bg-cover bg-center peer-checked:shadow-inner peer-checked:text-white" style="background-image: url('./eventimgs/public\ event.jpeg');">
+              
+                  
+                  <!-- Inner Content -->
+                  <div class="flex flex-col h-full p-4">                    
+                    <!-- Text Content -->
+                    <div class="mt-auto">
+                      <span class="absolute bottom-4 font-medium">Wedding</span>
+                    </div>
+                  </div>
+                </label>
+              </div>
+              <div class="relative">
+                <!-- Radio Button Input (hidden) -->
+                <input class="peer hidden" id="radio_9" type="radio" name="event" checked>
+                
+                <!-- Label with Background Image -->
+                <label for="radio_9" class="block h-[200px] w-full cursor-pointer rounded-lg shadow-lg shadow-slate-100 bg-cover bg-center peer-checked:shadow-inner peer-checked:text-white" style="background-image: url('./eventimgs/award_ceremony.jpeg');">
+              
+                  
+                  <!-- Inner Content -->
+                  <div class="flex flex-col h-full p-4">                    
+                    <!-- Text Content -->
+                    <div class="mt-auto">
+                      <span class="absolute bottom-4 font-medium">Wedding</span>
+                    </div>
+                  </div>
+                </label>
+              </div>
+              <div class="relative">
+                <!-- Radio Button Input (hidden) -->
+                <input class="peer hidden" id="radio_10" type="radio" name="event" checked>
+                
+                <!-- Label with Background Image -->
+                <label for="radio_10" class="block h-[200px] w-full cursor-pointer rounded-lg shadow-lg shadow-slate-100 bg-cover bg-center peer-checked:shadow-inner peer-checked:text-white" style="background-image: url('./eventimgs/Corporate\ Event.jpeg');">
+              
+                  
+                  <!-- Inner Content -->
+                  <div class="flex flex-col h-full p-4">                    
+                    <!-- Text Content -->
+                    <div class="mt-auto">
+                      <span class="absolute bottom-4 font-medium">Wedding</span>
+                    </div>
+                  </div>
+                </label>
+              </div>
+            </div>
+          </div>
+      
+          <div class="">
+            <p class="mt-8 font-serif text-xl font-bold text-[#2e394b]">Select a date</p>
+            <div class="relative mt-4 w-56">
+              <div class=" mt-4 grid max-w-[1600px] gap-x-9 gap-y-3 sm:grid-cols-2 md:grid-cols-5 pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+                <svg aria-hidden="true" class="h-5 w-5 text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
+              </div>
+              <input datepicker="" datepicker-orientation="bottom" autofocus="autofocus" type="text" class="datepicker-input block w-full rounded-lg border border-[#2e394b]  p-2.5 pl-10 text-[#2e394b] outline-none ring-opacity-30 placeholder:text-[#2e394b] focus:ring focus:ring-[#2e394b] sm:text-sm" placeholder="Select date" />
+            </div>
+          </div>
+      
+          <div class="">
+            <p class="mt-8 font-serif text-xl font-bold text-[#2e394b]">Select  event duration</p>
+            <div class="mt-4 grid max-w-[1600px] gap-x-9 gap-y-3 sm:grid-cols-2 md:grid-cols-5">
+              <div class="relative">
+                <input class="peer hidden" id="time_1" type="radio" name="radio" checked />
+               
+                <label class="flex h-full cursor-pointer flex-col border-double border-2 border-[#2e394b] bg-[#eddbc7] rounded-lg p-4 shadow-lg shadow-slate-100 peer-checked:bg-[#2e394b] peer-checked:text-white" for="time_1">
+                  <span class="mt-2- font-medium text-center">5hrs</span>
+                </label>
+              </div>
+              <div class="relative">
+                <input class="peer hidden" id="time_2" type="radio" name="radio" />
+                
+              
+                <label class="flex h-full cursor-pointer flex-col rounded-lg p-4 shadow-lg shadow-slate-100 border-double border-2 border-[#2e394b] bg-[#eddbc7]  peer-checked:bg-[#2e394b] peer-checked:text-white" for="time_2">
+                  <span class="mt-2 font-medium text-center">8hrs</span>
+              
+                </label>
+              </div>
+              <div class="relative">
+                <input class="peer hidden" id="time_3" type="radio" name="radio" />
+               
+              
+                <label class="flex h-full cursor-pointer flex-col rounded-lg p-4 shadow-lg shadow-slate-100 border-double border-2 border-[#2e394b] bg-[#eddbc7]  peer-checked:bg-[#2e394b] peer-checked:text-white" for="time_3">
+                  <span class="mt-2 font-medium text-center">12hrs</span>
+                </label>
+              </div>
+              <div class="relative">
+                <input class="peer hidden" id="time_4" type="radio" name="radio" />
+               
+              
+                <label class="flex h-full cursor-pointer flex-col rounded-lg p-4 shadow-lg shadow-slate-100 border-double border-2 border-[#2e394b] bg-[#eddbc7]  peer-checked:bg-[#2e394b] peer-checked:text-white" for="time_4">
+                  <span class="mt-2 font-medium text-center">24hrs</span>
+                </label>
+              </div>
+              <div class="relative">
+                <input class="peer hidden" id="time_5" type="radio" name="radio" />
+               
+              
+                <label class="flex h-full cursor-pointer flex-col rounded-lg p-4 shadow-lg shadow-slate-100 border-double border-2 border-[#2e394b] bg-[#eddbc7]  peer-checked:bg-[#2e394b] peer-checked:text-white" for="time_5">
+                  <span class="mt-2 font-medium text-center">More than 1 day</span>
+                </label>
+              </div>
+         
+
+              </div>
+              </div>
+          <button class="mt-8 w-56 rounded-full border-8 border-[#2e394b]  px-10 py-4 text-lg font-bold text-[#2e394b] transition hover:translate-y-1">Book Now</button>
+        </div>
+      </div>
+      <script src="https://unpkg.com/flowbite@1.5.2/dist/datepicker.js"></script>
+        
+</body>
+</html>
