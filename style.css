@@ -24,60 +24,68 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Navigation Bar */
+
 .nav-bar {
-  background-color: var(--primary-bg);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-}
-/* the logo is centered in mobile view */
-@media (max-width: 1024px) {
-  .logo-container {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-  }
-}
-
-@media (min-width: 1024px) {
-  .logo-container {
-    flex: 1;
-    display: flex;
-    justify-content: flex-start;
-  }
+    background-color:var(--primary-bg);
+    
 }
 
 
-.navbar-link {
-  text-decoration: none;
-  color: var(--secondary-text);
-  padding: 0.5rem 0;
-  transition: border-bottom 0.3s ease; 
+.bttn {
+    color: white;
+    background: linear-gradient(90deg, #2d3a4b, #1f2937);
+    transition: background-position 0.8s ease-in-out, box-shadow 0.8s ease-in-out;
+    text-decoration: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding:1rem 2rem;
 }
 
-.navbar-link:hover {
-  border-bottom: 2px solid var(--secondary-text);
-  padding-bottom: 0.45rem; 
+.bttn:hover {
+    background-position: right;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
 }
+
+.underline-animate {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    padding-bottom: 2px;
+    color: var(--primary-text);
+    
+}
+
+.underline-animate::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 100%;
+    background-color: currentColor;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+.underline-animate:hover::after {
+    transform: translateX(0);
+}
+
 
 .main-h2{
  font-size: larger;
 }
 
 
-
-
-
-
-
-/* Style for h2 headings with a small underline */
+/*  underline */
 .bordr-head {
   position: relative;
   font-family: "Raleway", sans-serif; 
-  color: #2d3a4b; 
+  color:var(--primary-text);
   margin-bottom: 1rem;
   
 }
 
-/* Add an underline using ::after pseudo-element */
+/* underline */
 .bordr-head::after {
   content: ''; 
   position: absolute; 
@@ -86,7 +94,7 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateX(-50%); 
   width: 8%; 
   height: 2px; 
-  background-color: #c6a288; 
+  background-color: var(--primary-bg);
   border-radius: 2px; 
 }
 
@@ -134,14 +142,6 @@ h1, h2, h3, h4, h5, h6 {
   box-sizing: border-box; 
 }
 
-
-/* Custom Banner Shadow */
-.custom-banner-shadow {
-  background-color: #f1f1f1; 
-  padding: 2rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-  border-radius: 0.5rem;
-}
 
 /* Service Section */
 .service-head {
@@ -240,23 +240,6 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 2.2rem;
 }
 
-/* Button Styles */
-.bttn {
-  color: var(--light-bg);
-  background: linear-gradient(90deg, var(--primary-text), var(--secondary-text)); 
-  background-size: 200% 100%;
-  background-position: left;
-  border: none;
-  cursor: pointer;
-  transition: background-position 0.5s ease-in-out, box-shadow 0.5s ease-in-out; 
-  text-decoration: none;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
-}
-
-.bttn:hover {
-  background-position: right; 
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
-}
 
 /* Secondary Button Style */
 .bttn-2 {
@@ -510,12 +493,14 @@ h1, h2, h3, h4, h5, h6 {
   background-color: var(--primary-bg); 
 }
 
-footer h1,h2,p,li,a,.foot-zephyr {
+.footer-last h1,h2,p,li,a,.foot-zephyr {
   color: #c6a288;
   text-align: start;
   text-decoration: none;
 
 }
+
+
 
 
 
