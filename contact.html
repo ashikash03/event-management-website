@@ -5,212 +5,118 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Event Management</title>
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-  <!-- Custom CSS -->
-  <style>
-    body {
-      background-color: #f7f7f7;
-      font-family: Arial, sans-serif;
-    }
-
-    h1, h2 {
-      color: #2e394b;
-    }
-
-    .form {
-      background-color: white;
-      padding: 2rem;
-      border-radius: 0.5rem;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    }
-
-    .form h4 {
-      color: #2e394b;
-      margin-bottom: 1rem;
-    }
-
-    .form label {
-      color: #2e394b;
-      font-weight: 500;
-    }
-
-    .form .form-control:focus {
-      border-color: #eddbc7;
-      box-shadow: 0 0 0 0.25rem rgba(237, 219, 199, 0.5);
-    }
-
-    .form .btn-primary {
-      background-color: #2e394b;
-      border-color: #2e394b;
-    }
-
-    .form .btn-primary:hover {
-      background-color: #1c2534;
-      border-color: #1c2534;
-    }
-
-    .info {
-      background-color: #2e394b;
-      color: white;
-      padding: 2rem;
-      border-radius: 0.5rem;
-    }
-
-    .info h3 {
-      color: #eddbc7;
-    }
-
-    .info p, .info a {
-      color: #eddbc7;
-    }
-
-    .info a:hover {
-      color: #ffffff;
-      text-decoration: underline;
-    }
-
-    .info .icon-box {
-      display: flex;
-      align-items: center;
-      margin-bottom: 1rem;
-    }
-
-    .info .icon-box .icon {
-      background-color: #eddbc7;
-      color: #2e394b;
-      width: 40px;
-      height: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-    }
-
-    .info .icon-box .text {
-      margin-left: 1rem;
-    }
-
-    .social-icons a {
-      width: 48px;
-      height: 48px;
-      display: inline-block;
-      margin-right: 1rem;
-    }
-
-    .social-icons img {
-      width: 100%;
-      height: auto;
-      border-radius: 50%;
-    }
-
-    iframe {
-      border-radius: 0.5rem;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    }
-  </style>
 </head>
 
-<body>
+<body class="bg-gray-100 font-sans">
 
   <!-- Contact Section Starts -->
-  <div class="container py-5">
-    <h2 class="text-center">SEND US A MESSAGE</h2>
-    <h1 class="text-center">LET'S GET STARTED</h1>
+  <div class="container mx-auto py-12">
+    <h2 class="text-3xl font-bold text-center text-gray-800">SEND US A MESSAGE</h2>
+    <h1 class="text-4xl font-bold text-center text-gray-800 mt-2">LET'S GET STARTED</h1>
 
-    <div class="row mt-5">
-      <div class="col-md-6">
-        <div class="form">
-          <h4>SEND YOUR REQUEST</h4>
-          <form>
-            <div class="row mb-3">
-              <div class="col-md-6">
-                <label>First Name</label>
-                <input type="text" placeholder="Name" class="form-control">
-              </div>
-              <div class="col-md-6">
-                <label>Surname</label>
-                <input type="text" placeholder="Surname" class="form-control">
-              </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
+      <!-- Form Section -->
+      <div class="bg-white p-8 rounded-lg shadow-md">
+        <h4 class="text-xl font-semibold text-gray-800 mb-6">SEND YOUR REQUEST</h4>
+        <form>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+            <div>
+              <label class="block text-gray-700 font-medium">First Name</label>
+              <input type="text" placeholder="Name" class="mt-2 p-3 border rounded-md w-full focus:ring focus:ring-[#eddbc7] focus:outline-none">
             </div>
+            <div>
+              <label class="block text-gray-700 font-medium">Surname</label>
+              <input type="text" placeholder="Surname" class="mt-2 p-3 border rounded-md w-full focus:ring focus:ring-[#eddbc7] focus:outline-none">
+            </div>
+          </div>
 
-            <div class="row mb-3">
-              <div class="col-md-6">
-                <label>Email</label>
-                <input type="email" placeholder="Enter your Email id" class="form-control">
-              </div>
-              <div class="col-md-6">
-                <label>Mobile</label>
-                <input type="tel" placeholder="Enter your phone number" class="form-control">
-              </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+            <div>
+              <label class="block text-gray-700 font-medium">Email</label>
+              <input type="email" placeholder="Enter your Email" class="mt-2 p-3 border rounded-md w-full focus:ring focus:ring-[#eddbc7] focus:outline-none">
             </div>
+            <div>
+              <label class="block text-gray-700 font-medium">Mobile</label>
+              <input type="tel" placeholder="Enter your phone number" class="mt-2 p-3 border rounded-md w-full focus:ring focus:ring-[#eddbc7] focus:outline-none">
+            </div>
+          </div>
 
-            <div class="mb-3">
-              <label>Message</label>
-              <textarea placeholder="Write your message here..." class="form-control" rows="5"></textarea>
-            </div>
+          <div class="mb-4">
+            <label class="block text-gray-700 font-medium">Message</label>
+            <textarea placeholder="Write your message here..." class="mt-2 p-3 border rounded-md w-full h-32 focus:ring focus:ring-[#eddbc7] focus:outline-none"></textarea>
+          </div>
 
-            <div class="mt-4">
-              <input type="submit" value="Send" class="btn btn-primary w-100">
-            </div>
-          </form>
-        </div>
+          <div class="mt-6">
+            <input type="submit" value="Send" class="bg-gray-800 text-white py-3 px-6 w-full rounded-md hover:bg-gray-700 cursor-pointer">
+          </div>
+        </form>
       </div>
 
-      <div class="col-md-6">
-        <div class="info">
-          <h3>Contact Info</h3>
-          <div class="icon-box">
-            <div class="icon">
+      <!-- Contact Info Section -->
+      <div class="bg-gray-800 text-white p-8 rounded-lg">
+        <h3 class="text-2xl font-semibold text-[#eddbc7] mb-4">Contact Info</h3>
+        <div class="mb-4">
+          <div class="flex items-center space-x-4">
+            <div class="bg-[#eddbc7] text-gray-800 p-2 rounded-full">
               <i class="fa-solid fa-location-dot"></i>
             </div>
-            <div class="text">
-              <p>345 Hill Ave, Nashville, TN 37210, USA</p>
-            </div>
+            <p>345 Hill Ave, Nashville, TN 37210, USA</p>
           </div>
-          <div class="icon-box">
-            <div class="icon">
+        </div>
+        <div class="mb-4">
+          <div class="flex items-center space-x-4">
+            <div class="bg-[#eddbc7] text-gray-800 p-2 rounded-full">
               <i class="fa-regular fa-envelope"></i>
             </div>
-            <div class="text">
-              <a href="mailto:example@gmail.com">example@gmail.com</a>
-            </div>
+            <a href="mailto:example@gmail.com" class="hover:underline">example@gmail.com</a>
           </div>
-          <div class="icon-box">
-            <div class="icon">
+        </div>
+        <div class="mb-4">
+          <div class="flex items-center space-x-4">
+            <div class="bg-[#eddbc7] text-gray-800 p-2 rounded-full">
               <i class="fa-solid fa-phone"></i>
             </div>
-            <div class="text">
-              <a href="tel:615-369-6474">615-369-6474</a>
-            </div>
+            <a href="tel:615-369-6474" class="hover:underline">615-369-6474</a>
           </div>
-          <div class="mt-4 social-icons">
-            <a href="https://www.facebook.com/login/">
-              <img src="https://img.freepik.com/premium-vector/3d-vector-facebook-icon-social-media_721791-1528.jpg" alt="Facebook">
-            </a>
-            <a href="https://www.instagram.com/accounts/login/?hl=en">
-              <img src="https://cdn.pixabay.com/photo/2016/08/09/17/52/instagram-1581266_640.jpg" alt="Instagram">
-            </a>
-            <a href="https://www.linkedin.com/login">
-              <img src="https://i.pinimg.com/736x/0c/78/d0/0c78d03cbfa19d5f3d7ad1b6e49f957b.jpg" alt="LinkedIn">
-            </a>
-            <a href="https://x.com/i/flow/login">
-              <img src="https://img.freepik.com/premium-vector/new-twitter-logo-x-2023-twitter-x-logo-vector-download_691560-10808.jpg" alt="X">
-            </a>
-          </div>
+        </div>
+        <div class="mt-6 flex space-x-4">
+          <a href="https://www.facebook.com/login/">
+            <img src="https://img.freepik.com/premium-vector/3d-vector-facebook-icon-social-media_721791-1528.jpg" alt="Facebook" class="w-12 h-12 rounded-full">
+          </a>
+          <a href="https://www.instagram.com/accounts/login/?hl=en">
+            <img src="https://cdn.pixabay.com/photo/2016/08/09/17/52/instagram-1581266_640.jpg" alt="Instagram" class="w-12 h-12 rounded-full">
+          </a>
+          <a href="https://www.linkedin.com/login">
+            <img src="https://i.pinimg.com/736x/0c/78/d0/0c78d03cbfa19d5f3d7ad1b6e49f957b.jpg" alt="LinkedIn" class="w-12 h-12 rounded-full">
+          </a>
+          <a href="https://x.com/i/flow/login">
+            <img src="https://img.freepik.com/premium-vector/new-twitter-logo-x-2023-twitter-x-logo-vector-download_691560-10808.jpg" alt="X" class="w-12 h-12 rounded-full">
+          </a>
         </div>
       </div>
     </div>
 
-    <div class="mt-5">
+    <div class="mt-10">
       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29738.826343491513!2d-86.73820745941272!3d36.138434854699625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x886468b36c1f7bc5%3A0x517ce7cb59b469bd!2s345%20Hill%20Ave%2C%20Nashville%2C%20TN%2037210%2C%20USA!5e0!3m2!1sen!2sin!4v1724580680142!5m2!1sen!2sin"
-        class="w-100 h-96 border-0" allowfullscreen="" loading="lazy"></iframe>
+        class="w-full h-96 border-0 shadow-md rounded-md" allowfullscreen="" loading="lazy"></iframe>
     </div>
   </div>
 
+  <!-- Footer Section -->
+  <div id="footer-placeholder"></div>
+</div>
+
+<script>
+  fetch('footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer-placeholder').innerHTML = data;
+    });
+</script>
 </body>
 
 </html>
