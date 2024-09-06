@@ -332,6 +332,16 @@
         </div>
       </div>
       <script src="https://unpkg.com/flowbite@1.5.2/dist/datepicker.js"></script>
-        
+      <!-- Footer Section -->
+<div id="footer-placeholder"></div>
+</div>
+
+<script>
+  fetch('footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer-placeholder').innerHTML = data;
+    });
+</script>
 </body>
 </html>
